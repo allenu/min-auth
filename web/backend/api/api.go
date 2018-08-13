@@ -44,11 +44,6 @@ func apiFetchUser(w http.ResponseWriter, r *http.Request) {
     userStore := userStoreProvider.NewUserStore(r)
     user, err := userStore.FetchUserByUserId(userId)
 
-    /*
-    dbState := userpkg.NewDatabaseState(r)
-    user, err := userpkg.FetchUserByUserId(dbState, userId)
-    */
-
     var responseCode string
     var userResponse User
     if err != nil {
