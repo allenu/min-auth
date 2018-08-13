@@ -10,6 +10,7 @@ As always, this is a work in progress. Follow me on twitter: [@ussherpress](http
 
 git clone into your $GOPATH/pkg/src/min-auth.
 
+    cd min-auth/app
     cp rename_app.yaml app.yaml
 
 Edit app.yaml and enter your own session secret and twitter consumer key and consumer secret. (These bits come from https://apps.twitter.com/)
@@ -17,7 +18,6 @@ Edit app.yaml and enter your own session secret and twitter consumer key and con
 Test it out with:
 
     dev_appserver.py app.yaml
-
 
 # Parts to this system
 
