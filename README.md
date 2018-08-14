@@ -21,9 +21,9 @@ Test it out with:
 
 # How to use it in your project
 
-Simply provide a link to /auth/signin to sign in and /auth/signout to sign out. (See REST API section below for more info.)
+Simply provide a link to /auth/signin to sign in and /auth/signout to sign out on your page. (See REST API section below for more info.)
 
-Sample code or getting the currently signed in user:
+Sample code for getting the currently signed in user:
 
     import "github.com/allenu/minauth"
 
