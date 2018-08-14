@@ -4,3 +4,5 @@
 
     import "github.com/allenu/min-auth"
 
+    - [ ] Rename all "min-auth/..." to "github.com/allenu/min-auth/..."
+

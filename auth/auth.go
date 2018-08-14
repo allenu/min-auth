@@ -6,7 +6,7 @@ import (
     "log"
     "net/http"
 
-    userpkg "min-auth/web/backend/user"
+    userpkg "github.com/allenu/minauth/user"
 
 	"github.com/mrjones/oauth"
     "github.com/gorilla/sessions"

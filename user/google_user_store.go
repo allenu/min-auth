@@ -2,7 +2,6 @@ package user
 
 import (
 	"net/http"
-
 	"google.golang.org/appengine"
 )
 

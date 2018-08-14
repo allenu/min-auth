@@ -5,8 +5,8 @@ import (
     "html/template"
     "path"
 
-    _ "min-auth/web/backend"
-    "min-auth/web/backend/auth"
+    _ "github.com/allenu/minauth"
+    "github.com/allenu/minauth/auth"
 )
 
 func init() {

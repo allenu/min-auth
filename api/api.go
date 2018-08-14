@@ -5,7 +5,7 @@ import (
     "net/http"
     "strings"
 
-    userpkg "min-auth/web/backend/user"
+    userpkg "github.com/allenu/minauth/user"
 )
 
 const (
