@@ -1,4 +1,4 @@
-# min-auth
+# minauth
 
 This is the minimum code required to get auth (via Twitter) and user accounts working with Go and Google Cloud (App Engine).
 
@@ -6,11 +6,11 @@ This is the base user/auth code I wrote for [This Way or That (go-lang edition)]
 
 As always, this is a work in progress. Follow me on twitter: [@ussherpress](http://twitter.com/ussherpress)
 
-# How to use
+# How to test it out
 
-git clone into your $GOPATH/pkg/src/min-auth.
+git clone into your $GOPATH/pkg/src/minauth.
 
-    cd min-auth/app
+    cd minauth/example
     cp rename_app.yaml app.yaml
 
 Edit app.yaml and enter your own session secret and twitter consumer key and consumer secret. (These bits come from https://apps.twitter.com/)
@@ -18,6 +18,21 @@ Edit app.yaml and enter your own session secret and twitter consumer key and con
 Test it out with:
 
     dev_appserver.py app.yaml
+
+# How to use it in your project
+
+Simply provide a link to /auth/signin to sign in and /auth/signout to sign out. (See REST API section below for more info.)
+
+Sample code or getting the currently signed in user:
+
+    import "github.com/allenu/minauth"
+
+    func myHandler(w http.ResponseWriter, r *http.Request) {
+        userInfo := minauth.GetUserInfo(r)
+
+        // userInfo.Username is user's twitter handle or "anonymous" if not signed in
+        // userInfo.UserId is the user's unique ID (a UUID generated on first sign-in) or "anonymous" if not signed in
+    }
 
 # Parts to this system
 
@@ -43,17 +58,4 @@ To access info on the user or to sign in and out:
     /auth/signin - initiates the sign-in for twitter oauth
     /auth/signout - signs the current user out
     /auth/callback - handler for Twitter oauth callback
-
-## Getting current user
-
-Sample code:
-
-    import "min-auth/web/backend/auth"
-
-    func myHandler(w http.ResponseWriter, r *http.Request) {
-        userInfo := auth.GetUserInfo(r)
-
-        // userInfo.Username is user's twitter handle or "anonymous" if not signed in
-        // userInfo.UserId is the user's unique ID (a UUID generated on first sign-in) or "anonymous" if not signed in
-    }
 

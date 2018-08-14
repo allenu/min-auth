@@ -1,8 +1,6 @@
 # TODOs
 
-- [ ] Make this importable correctly as
-
-    import "github.com/allenu/min-auth"
-
-    - [ ] Rename all "min-auth/..." to "github.com/allenu/min-auth/..."
+- [x] Make this importable correctly as
+    import "github.com/allenu/minauth"
+    - [x] Rename all "minauth/..." to "github.com/allenu/minauth/..."
 
