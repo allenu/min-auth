@@ -5,8 +5,7 @@ import (
     "html/template"
     "path"
 
-    _ "github.com/allenu/minauth"
-    "github.com/allenu/minauth/auth"
+    "github.com/allenu/minauth"
 )
 
 func init() {
@@ -14,7 +13,7 @@ func init() {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-    userInfo := auth.GetUserInfo(r)
+    userInfo := minauth.GetUserInfo(r)
 
     fp := path.Join("templates", "index.html")
     if tmpl, err := template.ParseFiles(fp); err == nil {
