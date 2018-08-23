@@ -84,7 +84,14 @@ func authSignInHandler(w http.ResponseWriter, r *http.Request) {
 
     c.Debug(true)
 
-    url_callback := "http://" + r.Host + "/auth/callback"
+    var prefix string
+    if r.TLS != nil {
+        prefix = "https://"
+    } else {
+        prefix = "http://"
+    }
+
+    url_callback := prefix + r.Host + "/auth/callback"
     requestToken, u, err = c.GetRequestTokenAndUrl(url_callback)
 	if err != nil {
 		log.Fatal(err)
